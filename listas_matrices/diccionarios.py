@@ -1,22 +1,38 @@
-# Teoria: tuplas
+# Teoria - Diccionarios
 
-# Definir una tupla
-tupla = (1, 2, 3, 4)
+# Definir un diccionario
 
-print(tupla)
-print("Primer elemento:", tupla[0])
+diccionario = {"rojo": "red", "azul": "blue", "amarillo": "yellow"}
 
-# Modificar el valor
-print("Tupla sin modificar:", tupla)
-aux_lista = list(tupla)
-aux_lista[0] = 999
-tupla = tuple(aux_lista)
-print("Tupla modificada:", tupla)
+# Mostramos
+print("El color rojo en inglés es:", diccionario["rojo"])
+print("El color azul en inglés es:", diccionario["azul"])
+print("El color amarillo en inglés es:", diccionario["amarillo"])
+
+# Agregar
+diccionario["verde"] = "grin"
+diccionario.update({"blanco": "white"})
+print(diccionario)
+
+# Modificar
+diccionario["verde"] = "green"
+diccionario.update({"verde": "green"})
+
+# Obtener con el metodo
+rojo = diccionario.get("rojo")
+print("El color rojo es:", rojo)
 
 # Eliminar
-tamanio_tupla = len(tupla)
-print("El tamanio de la tupla es:", tamanio_tupla)
+del diccionario["rojo"]
+diccionario.pop("azul")
+print(diccionario)
 
-# Concatenar tuplas
-tupla_nueva = (1, 2, 3) + (4, 5, 6)
-print("Nueva tupla:", tupla_nueva)
+# Items
+print("Items:", diccionario.items())
+# Keys
+print("Keys:", diccionario.keys())
+# Values
+print("Values:", diccionario.values())
+
+for value in diccionario.values():
+    print(value)
